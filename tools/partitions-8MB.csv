@@ -1,0 +1,17 @@
+# Name,   Type, SubType, Offset,  Size, Flags
+
+# Non-volatile storage, for persistent data
+nvs,      data, nvs,     0x9000,  0x5000,
+
+# Working space for OTA updates
+otadata,  data, ota,     0xe000,  0x2000,
+
+# Program slots
+app0,     app,  ota_0,   0x10000, 0x200000,
+app1,     app,  ota_1,   0x210000,0x200000,
+
+# SPIFFS filesystem, for storing program assets
+spiffs,   data, spiffs,  0x410000,0x3F0000,
+
+# For storing coredumps (debugging)
+coredump, data, coredump,,64K
